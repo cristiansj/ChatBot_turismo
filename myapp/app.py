@@ -11,7 +11,7 @@ def login():
 
         cedula = request.form['cedula']
         if cedula in usuarios:
-            return 'Bienvenido de nuevo!'
+            return render_template('chatbot.html')
         else:
             return render_template('registro.html')
 
@@ -25,7 +25,7 @@ def registro():
 
         cedula = request.form['cedula']
         if cedula in usuarios:
-            return 'Bienvenido de nuevo!'
+            return render_template('chatbot.html')
         else:
             nombre = request.form['nombre']
             edad = int(request.form['edad'])
@@ -41,6 +41,10 @@ def registro():
             return 'Registro completo!'
 
     return render_template('registro.html')
+
+@app.route("/get")
+def get_bot_response():
+    return "Hola mundo"
 
 if __name__ == '__main__':
     app.run(port=7000)
