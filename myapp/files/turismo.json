@@ -4,6 +4,11 @@
          "tag":"saludo",
          "patterns":[
             "Hi",
+            "Hola",
+            "Hola como estas",
+            "oe",
+            "Que cuentas",
+            "Como estas",
             "How are you",
             "Is anyone there?",
             "Hello",
