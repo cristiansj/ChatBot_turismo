@@ -1,0 +1,114 @@
+{
+   "intents":[
+      {
+         "tag":"saludo",
+         "patterns":[
+            "Hi",
+            "How are you",
+            "Is anyone there?",
+            "Hello",
+            "Good day"
+         ],
+         "responses":[
+            "Hello, how can I help you?",
+            "Hi there, what can I do for you?",
+            "Hi, I'm here to help. What do you need?",
+            "Hello, how can I assist you today?",
+            "Hi there, how may I assist you?"
+         ]
+      },
+      {
+         "tag":"despedida",
+         "patterns":[
+            "Adios",
+            "Hasta luego",
+            "Chao",
+            "Hasta la proxima"
+         ],
+         "responses":[
+            "Adios, gracias por visitarnos",
+            "Ten un buen día, Adios",
+            "Adios! Vuelve pronto."
+         ]
+      },
+      {
+         "tag":"sitios",
+         "patterns":[
+            "quiero visitar un lugar",
+            "quiero ir a algun sitio",
+            "recomiendame un lugar para visitar",
+            "recomiedame un sitio para visitar"
+         ],
+         "responses":[
+            "Salento es un buen lugar para visitar",
+            "Filandia es un lindo sitio para visitar",
+            "Te recomiendo visitar Montenegro",
+            "Te recomiendo ir a Quimbaya"
+         ]
+      },
+      {
+         "tag":"restaurantes",
+         "patterns":[
+            "recomiendame un restaurante",
+            "quiero comer",
+            "¿donde puedo almorzar?",
+            "¿donde puedo comer algo?",
+            "¿donde puedo desayunar?",
+            "¿donde puedo cenar?"
+         ],
+         "responses":[
+            "Te sugiero el restaurante star wings",
+            "Te sugiero el restaurante La Fogata",
+            "Te sugiero el restaurante Container",
+            "Te sugiero el restaurante La estacion del crepe"
+         ]
+      },
+      {
+         "tag":"museos",
+         "patterns":[
+            "quiero visitar un museo",
+            "quiero ir a algun museo",
+            "recomiendame un museo",
+            "recomiedame un museo para visitar"
+         ],
+         "responses":[
+            "Te recomiendo el museo del Oro Quimbaya",
+            "Casa Museo Cipriano Echeverri es un buen museo para visitar",
+            "Te recomiendo visitar Casa Museo Pueblito Cafetero"
+         ]
+      },
+      {
+         "tag":"deportes_extremos",
+         "patterns":[
+            "¿Dónde puedo hacer deportes extremos en esta zona?",
+            "¿Conoces algún lugar cercano donde practicar deportes extremos?",
+            "¿Hay algún lugar por aquí donde pueda hacer parapente o bungee jumping?",
+            "¿Cuáles son los mejores lugares para hacer deportes extremos en esta región?",
+            "¿Podrías recomendarme algún lugar para hacer rafting o escalada?",
+            "¿En qué lugares cercanos puedo hacer canyoning o puenting?",
+            "¿Conoces algún lugar seguro y emocionante para hacer deportes extremos?",
+            "¿Dónde puedo encontrar lugares para hacer deportes extremos en el Quindío?",
+            "¿Hay algún lugar en particular que recomiendes para hacer deportes extremos?",
+            "¿Cuáles son los lugares más populares para hacer deportes extremos en el Quindío?",
+            "deportes extremos",
+            "Parapente",
+            "Rafting",
+            "Escalada",
+            "Bungee jumping",
+            "Canyoning"
+         ],
+         "responses":[
+            "Valle de Cocora: Este es un lugar popular para hacer parapente, donde puedes disfrutar de impresionantes vistas de las montañas y los valles de la región.",
+            "Río La Vieja: Este río es un lugar perfecto para hacer rafting y kayak. Hay varios operadores turísticos que ofrecen tours y equipos.",
+            "Salento: Este es un pueblo pintoresco ubicado en el Valle de Cocora, que ofrece varias opciones para hacer senderismo y caminatas extremas.",
+            "Parque Nacional Natural Los Nevados: Este parque es un lugar ideal para hacer senderismo y montañismo. Aquí puedes encontrar varios picos altos y rutas desafiantes.",
+            "Quimbaya: Este es un pueblo ubicado en el centro del Quindío, que ofrece opciones para hacer ciclismo de montaña y escalada.",
+            "El Valle del Cócora: Este es un lugar perfecto para hacer canopy y tirolesa, donde puedes disfrutar de las vistas de los paisajes montañosos y los valles verdes.",
+            "Río Verde: Este río es otro lugar popular para hacer rafting y kayak. Aquí también puedes encontrar opciones para hacer canyoning y puenting.",
+            "Parque del Café: Este parque temático ofrece varias atracciones emocionantes, incluyendo montañas rusas y atracciones acuáticas.",
+            "Circasia: Este es un pueblo ubicado en el centro del Quindío, que ofrece opciones para hacer ciclismo de montaña y senderismo.",
+            "La Tebaida: Este es un pueblo ubicado en el centro del Quindío, que ofrece opciones para hacer ciclismo de montaña y senderismo."
+         ]
+      }
+   ]
+}

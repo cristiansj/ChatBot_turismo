@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/index.css">
+    <title>Registro</title>
+</head>
+<body>
+    <div class="box">
+        <span class="borderLine"></span>
+        <form method="post" action="{{ url_for('registro') }}">
+            <div class="wrapper">
+                <div class="typing-demo">
+                    <h2>Registro</h2>
+                </div>
+            </div>
+            <div class="inputBox">
+                <input type="text" name="cedula" required="required">
+                <span for="cedula">Cédula</span>
+                <i></i>
+            </div>
+            <div class="inputBox">
+                <input type="text" name="nombre" required="required">
+                <span for="nombre">Nombre</span>
+                <i></i>
+            </div>
+            <div class="inputBox">
+                <input type="number" name="edad" min="1" required="required">
+                <span for="edad">Edad</span>
+                <i></i>
+            </div>
+            <div class="inputBox">
+                <input type="text" name="pais" required="required">
+                <span for="pais">País</span>
+                <i></i>
+            </div>
+            <div class="inputBox">
+                <input type="text" name="ciudad" required="required">
+                <span for="ciudad">Ciudad</span>
+                <i></i>
+            </div>
+            <div class="inputBox">
+                <input type="text" list="opciones" id="genero" name="genero" required="required">
+                <datalist id="opciones">
+                    <option value="Masculino">
+                    <option value="Femenino">
+                    <option value="Otro">
+                </datalist>
+                <span for="genero">Género</span>
+                <i></i>
+            </div>
+            <input class="button" type="submit" value="enviar">
+        </form>
+    </div>
+</body>
+</html>  
