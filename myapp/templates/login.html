@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/index_login.css">
+    <title>Login</title>
+</head>
+<body>
+    <div class="box">
+        <span class="borderLine"></span>
+        <form method="post" action="{{ url_for('login') }}">
+            <div class="wrapper">
+                <div class="typing-demo">
+                    <h2>Login</h2>
+                </div>
+            </div>
+            <div class="inputBox">
+                <input type="text" name="cedula" required="required">
+                <span for="cedula">Cédula</span>
+                <i></i>
+            </div>
+            <input class="button" type="submit" value="enviar">
+        </form>
+    </div>
+</body>
+</html>  
