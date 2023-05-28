@@ -7,21 +7,17 @@ import pandas as pd
 import pickle
 import random
 import nltk
+from flask import Flask, render_template, request, session
 from nltk.stem.lancaster import LancasterStemmer
 stemmer = LancasterStemmer()
 nltk.download('punkt')
-
-from flask import Flask, render_template, request
-import json
-
-usuario_sesion = ""
 
 #Preprocesamiento de los datos de entrenamiento usando NTLK
 words = []
 classes = []
 documents = []
 ignore_words = ['?']
-data_file = open('files/turismo.json').read()
+data_file = open('files/turismo.json', encoding='utf-8').read()
 intents = json.loads(data_file)
 
 for intent in intents['intents']:
@@ -158,16 +154,17 @@ def guardar_conversacion(usuario, pr, rp, tag):
     df.to_excel('files/log.xlsx',index=False)
 
 app = Flask(__name__, static_folder='static')
+app.secret_key = 'my_secret_key'
 
 @app.route('/login.html', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
-        with open("files/usuarios.json") as file:
+        with open("files/usuarios.json", encoding='utf-8') as file:
             usuarios = json.load(file)
 
         cedula = request.form['cedula']
         if cedula in usuarios:
-            usuario_sesion = cedula
+            session['usuario_sesion'] = cedula
             return render_template('chatbot.html')
         else:
             return render_template('registro.html')
@@ -177,12 +174,12 @@ def login():
 @app.route('/registro.html', methods=['GET', 'POST'])
 def registro():
     if request.method == 'POST':
-        with open("files/usuarios.json") as file:
+        with open("files/usuarios.json", encoding='utf-8') as file:
             usuarios = json.load(file)
 
         cedula = request.form['cedula']
         if cedula in usuarios:
-            usuario_sesion = cedula
+            session['usuario_sesion'] = cedula
             return render_template('chatbot.html')
         else:
             nombre = request.form['nombre']
@@ -194,23 +191,45 @@ def registro():
             genero = request.form['genero']
             genero = genero.lower()
             usuarios[cedula] = {"nombre": nombre,"edad":edad,"pais":pais,"ciudad":ciudad, "genero": genero}
-            with open("files/usuarios.json", "w") as file:
+            with open("files/usuarios.json", "w", encoding='utf-8') as file:
                 json.dump(usuarios, file)
-            usuario_sesion = cedula
-            return 'Registro completo!'
+            session['usuario_sesion'] = cedula
+            return render_template('chatbot.html')
 
     return render_template('registro.html')
 
 @app.route("/get")
 def get_bot_response():
-    print(usuario_sesion)
     userText = request.args.get('msg')
     # predict intent
     ints = predict_class(userText)
     # get response
     res = getResponse(ints, intents)
-    guardar_conversacion(usuario_sesion, userText, res, ints[0][0])
+    guardar_conversacion(session['usuario_sesion'], userText, res, ints[0][0])
     return res
+
+@app.route('/baseDatos')
+def base_datos():
+    # Leer el archivo Excel
+    df1 = pd.read_excel('files/log.xlsx')
+    df1 = df1.rename(columns={'Usuario': 'cedula'})
+    df1['cedula'] = df1['cedula'].astype(str)
+
+    # Leer el archivo JSON
+    with open('files/usuarios.json', 'r', encoding='utf-8') as f:
+        data = json.load(f)
+    df2 = pd.DataFrame.from_dict(data, orient='index', columns=['nombre', 'edad', 'pais', 'ciudad', 'genero'])
+    df2.index.name = 'cedula'
+
+    # Hacer el join utilizando la columna 'cedula'
+    df_merged = pd.merge(df1, df2, left_on='cedula', right_index=True)
+
+    # Guardar el DataFrame en un archivo Excel
+    df_merged.to_excel('base_de_datos_turismo.xlsx', index=False)
+
+    return 'se creo la base de datos'
+
+
 
 if __name__ == '__main__':
     app.run(port=7000)

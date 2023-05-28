@@ -1,13 +1,31 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
+    background-color: #23242a;
+}
+
+header {
+    text-align: center;
+    padding: 20px 0;
+}
+
+header h1 {
+    font-size: 60px;
+    font-weight: bold;
+    background: linear-gradient(#45f3ff, #45f3ff ,#ff2770,#ff2770);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    text-stroke-width: 1px;
+    text-stroke-color: black;
 }
 
 #chatbox {
     margin-left: auto;
     margin-right: auto;
     width: 60%;
-    background-color: #fff;
+    background-color: #45f3ff;
     padding: 10px;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -29,10 +47,51 @@ span {
 }
 
 .userText span {
-    background-color: #4CAF50;
+    background-color: #ff2770;
     color: #fff;
 }
 
 .botText span {
-    background-color: #ddd;
+    background-color: #590996;
+    color: #fff;
+}
+
+#userInput {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    background-color: #590996;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#userInput input[type="text"] {
+    flex: 1;
+    margin-right: 10px;
+    background-color: #590996;
+    border: none;
+    padding: 8px;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+#userInput button {
+    background-color: #ff2770;
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#userInput button:hover {
+    background-color: #d61c5a;
 }

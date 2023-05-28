@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="../static/index_chatbot.css">
-        <title>Chatbot</title>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../static/index_chatbot.css">
+    <title>Chatbot</title>
+</head>
 <body>
+    <header>
+        <h1>Kofi</h1>
+    </header>
     <div id="chatbox">
     </div>
     <div id="userInput">
@@ -26,6 +29,13 @@
                 document.getElementById("textInput").value = "";
             });
         }
+
+        document.getElementById("textInput").addEventListener("keyup", function(event) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                document.getElementById("buttonInput").click();
+            }
+        });
     </script>
 </body>
 </html>
