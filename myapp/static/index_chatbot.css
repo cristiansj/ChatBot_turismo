@@ -57,7 +57,7 @@ span {
 }
 
 #userInput {
-    position: absolute;
+    position: relative;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);

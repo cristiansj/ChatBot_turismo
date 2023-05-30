@@ -156,6 +156,10 @@ def guardar_conversacion(usuario, pr, rp, tag):
 app = Flask(__name__, static_folder='static')
 app.secret_key = 'my_secret_key'
 
+@app.route("/")
+def home():
+    return render_template('login.html')
+
 @app.route('/login.html', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
@@ -203,6 +207,8 @@ def get_bot_response():
     userText = request.args.get('msg')
     # predict intent
     ints = predict_class(userText)
+    if len(ints) == 0:
+        return 'Ay, hijuepucha, no entendí, repitímela más despacio, ¿puede ser?'
     # get response
     res = getResponse(ints, intents)
     guardar_conversacion(session['usuario_sesion'], userText, res, ints[0][0])
@@ -210,12 +216,12 @@ def get_bot_response():
 
 @app.route('/baseDatos')
 def base_datos():
-    # Leer el archivo Excel
+    # Lee el archivo Excel
     df1 = pd.read_excel('files/log.xlsx')
     df1 = df1.rename(columns={'Usuario': 'cedula'})
     df1['cedula'] = df1['cedula'].astype(str)
 
-    # Leer el archivo JSON
+    # Lee el archivo JSON
     with open('files/usuarios.json', 'r', encoding='utf-8') as f:
         data = json.load(f)
     df2 = pd.DataFrame.from_dict(data, orient='index', columns=['nombre', 'edad', 'pais', 'ciudad', 'genero'])
