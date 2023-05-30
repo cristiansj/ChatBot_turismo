@@ -11,6 +11,8 @@
             "¡Saludos!",
             "Hola, chatbot",
             "¡Hey!",
+            "hi",
+            "hello",
             "Hola, ¿me puedes ayudar?",
             "Hola, soy turista y tengo algunas preguntas"
          ],
@@ -32,6 +34,8 @@
          "patterns":[
             "Adiós",
             "adios",
+            "bye bye",
+            "bye",
             "chao",
             "buen dia",
             "hasta la proxima",
@@ -61,6 +65,9 @@
       {
          "tag":"sitios",
          "patterns":[
+            "sitios buenos para visitar",
+            "quiero conocer sitios del quindio",
+            "cuales son los mejores lugares en el quindio",
             "quiero visitar un lugar",
             "quiero ir a algun sitio",
             "quiero explorar",
@@ -111,6 +118,12 @@
       {
          "tag":"museos",
          "patterns":[
+            "museos",
+            "me gustaria visitar algun museo",
+            "donde encuentro algun museo",
+            "museos cerca",
+            "que museos hay en el quindio",
+            "museos en el quindio",
             "¿Podrías recomendarme algún museo interesante para visitar en el Quindío?",
             "¿Hay algún museo en particular que valga la pena visitar en esta región?",
             "Me gustaría explorar la historia y la cultura del Quindío, ¿hay museos recomendados?",
@@ -149,6 +162,11 @@
             "Rafting",
             "Escalada",
             "Bungee jumping",
+            "quiero practicar deportes extremos",
+            "que deportes extremos se practican en el quindio",
+            "practica de deportes extremos",
+            "deportes de alta presión",
+            "deportes peligrosos",
             "Canyoning"
          ],
          "responses":[
@@ -167,6 +185,10 @@
       {
          "tag":"Actividades al aire libre",
          "patterns":[
+            "que actividades al aire libre se pueden realizar en el quidio",
+            "actividades al aire libre",
+            "sitos al aire libre",
+            "aire libre",
             "¿Qué tipo de actividades al aire libre se pueden hacer en el Quindío?",
             "¿Qué opciones de entretenimiento al aire libre hay en la región?",
             "Me gustaría disfrutar de la naturaleza en el Quindío. ¿Qué me recomendarías hacer?",
@@ -189,6 +211,12 @@
            {
          "tag":"alojamiento",
          "patterns":[
+            "alojamientos",
+            "sitios para alojarse",
+            "lugares para hospedarse",
+            "buenos hoteles en el quindio",
+            "hoteles para pasar la noche",
+            "lugares para dormir",
             "¿Podrías recomendarme algunos lugares para hospedarme en el Quindío?",
             "Estoy buscando opciones de alojamiento en el Quindío, ¿me podrías ayudar?",
             "¿Cuáles son los mejores hoteles o posadas para hospedarse en el Quindío?",
@@ -206,6 +234,14 @@
            {
          "tag":"gastronomia",
          "patterns":[
+            "gastronomia",
+            "sitios para probar la gastronomia quindiana",
+            "que platos gastronomicos hay en el quindio",
+            "platos gastronomicos",
+            "platos tipicos del quidio",
+            "cuales son los platos tipico en el quindio",
+            "platos tipicos",
+            "gastronomia quindiana",
             "¿Cuáles son los platos típicos que debo probar en el Quindío?",
             "¿Qué opciones gastronómicas ofrece el Quindío?",
             "¿Cuáles son los restaurantes tradicionales del Quindío donde puedo probar la comida local?",
@@ -223,11 +259,15 @@
            {
          "tag":"monumentos",
          "patterns":[
-             "¿Cuáles son los monumentos más destacados del Quindío?",
-             "¿Qué lugares históricos y monumentos puedo visitar en la región?",
-             "¿Hay algún monumento emblemático que no pueda perderme durante mi visita?",
-             "Me gustaría conocer los monumentos y sitios históricos del Quindío. ¿Cuáles me recomendarías?",
-             "¿Dónde puedo encontrar monumentos interesantes y representativos del Quindío?"
+            "que monumentos se encuentran en el quindio",
+            "que esculturas tiene el quindio",
+            "esculturas",
+            "murales",
+            "¿Cuáles son los monumentos más destacados del Quindío?",
+            "¿Qué lugares históricos y monumentos puedo visitar en la región?",
+            "¿Hay algún monumento emblemático que no pueda perderme durante mi visita?",
+            "Me gustaría conocer los monumentos y sitios históricos del Quindío. ¿Cuáles me recomendarías?",
+            "¿Dónde puedo encontrar monumentos interesantes y representativos del Quindío?"
          ],
          "responses":[
             "¡Claro, viajero curioso! En el Quindío, podrás maravillarte con nuestros monumentos llenos de historia y cultura. Te recomiendo visitar el monumento a la Cultura Cafetera, ubicado en el Parque Nacional del Café, en el municipio de Montenegro. Aquí podrás aprender sobre la importancia del café en nuestra región. También puedes explorar el monumento a la Colonización, ubicado en el municipio de Armenia, en la Avenida Centenario. Este monumento rinde homenaje a los valientes colonos que forjaron estas tierras. ¡Prepara tu cámara y descubre la grandeza de nuestros monumentos!",
