@@ -95,3 +95,42 @@ span {
 #userInput button:hover {
     background-color: #d61c5a;
 }
+
+header {
+    position: relative;
+}
+
+#logoutContainer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+}
+
+#username {
+    margin-right: 10px;
+    color: #fff;
+}
+
+.logoutButton {
+    background-color: #ff2770;
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.logoutButton:hover {
+    background-color: #d61c5a;
+}
+
+.bienvenido {
+    background: linear-gradient(to right, #45f3ff ,#ff2770);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

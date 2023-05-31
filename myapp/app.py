@@ -156,7 +156,7 @@ def guardar_conversacion(usuario, pr, rp, tag):
 app = Flask(__name__, static_folder='static')
 app.secret_key = 'my_secret_key'
 
-@app.route("/")
+@app.route("/", methods=['GET', 'POST'])
 def home():
     return render_template('login.html')
 
@@ -168,8 +168,10 @@ def login():
 
         cedula = request.form['cedula']
         if cedula in usuarios:
+            nombre = "Bienvenido compadre, "
+            nombre += usuarios[str(cedula)]['nombre']
             session['usuario_sesion'] = cedula
-            return render_template('chatbot.html')
+            return render_template('chatbot.html', username=nombre)
         else:
             return render_template('registro.html')
 
@@ -183,8 +185,10 @@ def registro():
 
         cedula = request.form['cedula']
         if cedula in usuarios:
+            nombre = "Bienvenido compadre, "
+            nombre += usuarios[str(cedula)]['nombre']
             session['usuario_sesion'] = cedula
-            return render_template('chatbot.html')
+            return render_template('chatbot.html', username=nombre)
         else:
             nombre = request.form['nombre']
             edad = int(request.form['edad'])
@@ -197,8 +201,10 @@ def registro():
             usuarios[cedula] = {"nombre": nombre,"edad":edad,"pais":pais,"ciudad":ciudad, "genero": genero}
             with open("files/usuarios.json", "w", encoding='utf-8') as file:
                 json.dump(usuarios, file)
+            nombreA = "Bienvenido compadre, "
+            nombreA += nombre
             session['usuario_sesion'] = cedula
-            return render_template('chatbot.html')
+            return render_template('chatbot.html', username=nombreA)
 
     return render_template('registro.html')
 

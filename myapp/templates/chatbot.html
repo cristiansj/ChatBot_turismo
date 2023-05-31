@@ -10,6 +10,12 @@
 <body>
     <header>
         <h1>Kofi</h1>
+        <div id="logoutContainer">
+            <span id="username" class="bienvenido"></span>
+            <form method="post" action="{{ url_for('home') }}">
+                <button type="submit" class="logoutButton">Cerrar sesión</button>
+            </form>
+        </div>
     </header>
     <div id="chatbox">
     </div>
@@ -36,9 +42,12 @@
                 document.getElementById("buttonInput").click();
             }
         });
+
+        var username = "{{ username }}";
+        document.getElementById("username").textContent = username;
     </script>
     <script>
-        
+
     </script>
 </body>
 </html>
